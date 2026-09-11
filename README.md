@@ -9,10 +9,6 @@
 	Manage products, stock, sales, purchases, customers, suppliers and reports from one workspace.
 </p>
 
-<p align="center">
-	<img src="frontend/src/assets/background.png" alt="StockDZ application visual" width="900" />
-</p>
-
 ## Overview
 
 StockDZ is a full-stack business management application built for small and growing businesses. It combines a responsive Next.js frontend with an Express and Prisma API backed by MySQL.
