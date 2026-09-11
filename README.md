@@ -148,10 +148,4 @@ Open [http://localhost:3000](http://localhost:3000).
 | `backend` | `npm run build` | Generate Prisma client and compile TypeScript |
 | `backend` | `npm run db:seed` | Seed the database |
 
-## Security Notes
-
-- Keep `.env` and `.env.local` files out of version control.
-- Use a strong, unique `JWT_SECRET` in production.
-- Configure SMTP credentials through environment variables instead of hardcoding them.
-- Use a managed MySQL connection with restricted permissions for production deployments.
 
