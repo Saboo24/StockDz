@@ -1,0 +1,117 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Lora:ital,wght@0,400..700;1,400..700&family=IBM+Plex+Mono:ital,wght@0,100..700;1,100..700&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   Design tokens file. This single file owns the whole app's visual
+   identity — colors, radius, fonts, shadows, light + dark. To re-theme the app
+   (e.g. "make it a Supabase theme"), edit the token VALUES in :root and .dark
+   below. Nothing else. No second config file, no component edits.
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+/* ── Design tokens — the ONLY place the app's visual identity is defined.
+   Re-theme the whole app by editing the values in :root (+ .dark). No other file. ── */
+:root {
+  --background: 210 40% 98%;
+  --foreground: 222 47% 11%;
+  --card: 0 0% 100%;
+  --card-foreground: 222 47% 11%;
+  --popover: 0 0% 100%;
+  --popover-foreground: 222 47% 11%;
+  --primary: 217 91% 60%;
+  --primary-foreground: 0 0% 100%;
+  --secondary: 214 32% 96%;
+  --secondary-foreground: 222 47% 15%;
+  --muted: 210 40% 96%;
+  --muted-foreground: 215 16% 47%;
+  --accent: 214 45% 94%;
+  --accent-foreground: 222 47% 15%;
+  --destructive: 0 84% 60%;
+  --destructive-foreground: 0 0% 100%;
+  --border: 214 32% 91%;
+  --input: 214 32% 91%;
+  --ring: 217 91% 60%;
+  --chart-1: 217 91% 60%;
+  --chart-2: 196 75% 52%;
+  --chart-3: 152 68% 46%;
+  --chart-4: 36 94% 58%;
+  --chart-5: 254 75% 62%;
+  --sidebar: 210 40% 98%;
+  --sidebar-foreground: 222 47% 11%;
+  --sidebar-primary: 217 91% 60%;
+  --sidebar-primary-foreground: 0 0% 100%;
+  --sidebar-accent: 214 32% 95%;
+  --sidebar-accent-foreground: 217 91% 60%;
+  --sidebar-border: 214 32% 91%;
+  --sidebar-ring: 217 91% 60%;
+
+  --radius: 0.8rem;
+  --font-sans: 'DM Sans', ui-sans-serif, system-ui, sans-serif;
+  --font-serif: 'Lora', ui-serif, Georgia, serif;
+  --font-mono: 'IBM Plex Mono', ui-monospace, monospace;
+  --shadow-sm: 0 1px 2px 0 rgba(240, 10%, 11%, 0.05);
+  --shadow-md: 0 8px 22px -14px rgba(240, 10%, 11%, 0.28);
+  --shadow-lg: 0 16px 45px -18px rgba(240, 10%, 11%, 0.35);
+}
+
+.dark {
+  --background: 222 47% 10%;
+  --foreground: 214 32% 91%;
+  --card: 222 47% 13%;
+  --card-foreground: 214 32% 91%;
+  --popover: 222 47% 13%;
+  --popover-foreground: 214 32% 91%;
+  --primary: 217 91% 60%;
+  --primary-foreground: 0 0% 100%;
+  --secondary: 222 47% 15%;
+  --secondary-foreground: 214 32% 91%;
+  --muted: 222 47% 16%;
+  --muted-foreground: 215 20% 72%;
+  --accent: 217 91% 20%;
+  --accent-foreground: 214 32% 91%;
+  --destructive: 0 84% 60%;
+  --destructive-foreground: 0 0% 100%;
+  --border: 222 47% 18%;
+  --input: 222 47% 18%;
+  --ring: 217 91% 60%;
+  --chart-1: 217 91% 60%;
+  --chart-2: 196 75% 52%;
+  --chart-3: 152 68% 46%;
+  --chart-4: 36 94% 58%;
+  --chart-5: 254 75% 62%;
+  --sidebar: 222 47% 9%;
+  --sidebar-foreground: 214 32% 91%;
+  --sidebar-primary: 217 91% 60%;
+  --sidebar-primary-foreground: 0 0% 100%;
+  --sidebar-accent: 222 47% 15%;
+  --sidebar-accent-foreground: 214 32% 91%;
+  --sidebar-border: 222 47% 18%;
+  --sidebar-ring: 217 91% 60%;
+}
+
+@layer base {
+  * { border-color: hsl(var(--border)); }
+
+  /* Full viewport chain so app-shell / sidebar h-full + flex-1 work */
+  html { height: 100%; }
+  body {
+    min-height: 100%;
+    min-height: 100dvh;
+    display: flex;
+    flex-direction: column;
+    background-color: hsl(var(--background));
+    color: hsl(var(--foreground));
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+}
+
+@layer utilities {
+  .animate-fade-in { animation: fade-in 0.3s ease-in-out; }
+  @keyframes fade-in {
+    from { opacity: 0; transform: translateY(10px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+}
